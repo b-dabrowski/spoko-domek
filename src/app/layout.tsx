@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.brand} | ${siteConfig.tagline}`,
     description: siteConfig.purpose,
-    images: [siteConfig.theme.heroImage],
+    images: [siteConfig.hero.image],
   },
 };
 
