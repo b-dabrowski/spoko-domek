@@ -50,7 +50,14 @@ export function SpokoLanding() {
     <div ref={rootRef} className="midnight-page">
       <header className="midnight-nav">
         <Link href="/" className="midnight-brand">
-          {siteConfig.brand}
+          <Image
+            src="/brand/logo-black-white.png"
+            alt={siteConfig.brand}
+            width={140}
+            height={52}
+            className="brand-logo"
+            priority
+          />
         </Link>
 
         <nav className="midnight-nav__links">

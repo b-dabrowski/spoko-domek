@@ -94,9 +94,17 @@ img {
 }
 
 .midnight-brand {
+  display: inline-flex;
+  align-items: center;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.brand-logo {
+  width: auto;
+  height: 2.9rem;
+  object-fit: contain;
 }
 
 .midnight-nav__links,

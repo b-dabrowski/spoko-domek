@@ -25,7 +25,7 @@ export const siteConfig = {
   purpose:
     "Przytulny domek w Mikaszówce na kilka spokojnych dni przy lesie, wodzie i kominku.",
   tagline: "Wieczorem kominek, rano las i cisza.",
-  cta: "Zadzwoń po wolny termin",
+  cta: "Zapytaj o wolny termin",
   location: "Mikaszówka, ul. Wczasowa 7, gmina Płaska",
   phone: "780146021",
   email: "anetatrocki@wp.pl",
