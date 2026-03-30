@@ -41,7 +41,7 @@ export const siteConfig = {
     title: "Miejsce na spokojny wypad o każdej porze roku.",
     text:
       "W środku czeka kominek i wygodny domowy klimat. Na zewnątrz masz las, wodę i dużo ciszy. To dobry kierunek, kiedy chcesz po prostu odpocząć.",
-    image: "/photos/livingroom-fireplace-002.jpg",
+    image: "/photos/home-spring-003.jpg",
   },
   stats: [
     "do 8 osób",
@@ -76,14 +76,14 @@ export const siteConfig = {
       title: "Okolica robi połowę roboty",
       text:
         "Las, jeziora, szlaki i Kanał Augustowski są blisko. To okolica, która sama zachęca do spaceru, roweru albo dnia bez pośpiechu.",
-      image: "/photos/home-winter-001.jpg",
+      image: "/photos/home-spring-001.jpg",
     },
   ],
   gallery: [
     { src: "/photos/bedroom-2-001.jpg", alt: "Sypialnia" },
     { src: "/photos/kitchen-003.jpg", alt: "Kuchnia" },
     { src: "/photos/toilet-001.jpg", alt: "Toaleta" },
-    { src: "/photos/home-winter-002.jpg", alt: "Domek zimą" },
+    { src: "/photos/terrace-001.jpg", alt: "Taras" },
   ],
   booking: {
     title: "Rezerwacja jest prosta",

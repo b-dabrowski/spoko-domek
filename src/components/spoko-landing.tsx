@@ -98,12 +98,17 @@ export function SpokoLanding() {
 
       <main className="midnight-main">
         <section className="midnight-hero">
-          <div className="midnight-hero__image" data-show>
+          <div
+            className="midnight-hero__image"
+            data-show
+            style={{ position: "absolute", inset: 0 }}
+          >
             <Image
               src={siteConfig.hero.image}
-              alt="Salon z kominkiem w SPOKO DOMEK"
+              alt="Widok domku SPOKO DOMEK"
               fill
               priority
+              loading="eager"
               sizes="100vw"
             />
           </div>
@@ -157,7 +162,10 @@ export function SpokoLanding() {
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
               </div>
-              <div className="midnight-feature__image">
+              <div
+                className="midnight-feature__image"
+                style={{ position: "relative", minHeight: "22rem" }}
+              >
                 <Image
                   src={section.image}
                   alt={section.title}
@@ -176,12 +184,17 @@ export function SpokoLanding() {
           </div>
 
           <div className="midnight-gallery">
-            {siteConfig.gallery.map((photo) => (
-              <figure key={photo.src} className="midnight-gallery__item">
+            {siteConfig.gallery.map((photo, index) => (
+              <figure
+                key={photo.src}
+                className="midnight-gallery__item"
+                style={{ position: "relative", minHeight: "18rem" }}
+              >
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
+                  loading={index === 0 ? "eager" : undefined}
                   sizes="(max-width: 900px) 100vw, 25vw"
                 />
                 <figcaption>{photo.alt}</figcaption>
