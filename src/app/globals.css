@@ -103,7 +103,7 @@ img {
 
 .brand-logo {
   width: auto;
-  height: 2.9rem;
+  height: 3.3rem;
   object-fit: contain;
 }
 
@@ -165,21 +165,21 @@ img {
   border-radius: 1.5rem;
   border: 1px solid var(--color-border);
   background: rgba(25, 26, 31, 0.96);
-  padding: 1rem 1.2rem;
+  padding: 0.9rem 1.15rem;
 }
 
 .midnight-mobile-menu a {
   display: block;
-  padding: 0.7rem 0;
+  padding: 0.6rem 0;
 }
 
 .midnight-main {
-  padding: 2.5rem 0 5rem;
+  padding: 2.2rem 0 5rem;
 }
 
 .midnight-hero {
   position: relative;
-  min-height: 40rem;
+  min-height: 34rem;
   overflow: hidden;
   border-radius: 2rem;
   border: 1px solid var(--color-border);
@@ -206,8 +206,8 @@ img {
 .midnight-hero__content {
   position: relative;
   z-index: 1;
-  max-width: 40rem;
-  padding: 3rem;
+  max-width: 34rem;
+  padding: 2.4rem;
 }
 
 .midnight-hero h1,
@@ -218,9 +218,17 @@ img {
 .legal-card h1 {
   margin: 0.9rem 0 1rem;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5.2rem);
-  line-height: 0.94;
+  font-size: clamp(2.4rem, 4.6vw, 4.5rem);
+  line-height: 0.98;
   letter-spacing: -0.05em;
+}
+
+.midnight-section__intro h2,
+.midnight-feature h2,
+.midnight-booking h2,
+.midnight-footer h2,
+.legal-card h1 {
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
 }
 
 .midnight-hero__text,
@@ -229,21 +237,24 @@ img {
 .midnight-booking p,
 .legal-card p {
   color: var(--color-muted);
-  line-height: 1.8;
+  line-height: 1.7;
+  max-width: 36rem;
 }
 
 .midnight-strip {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.8rem;
   padding-top: 1.4rem;
 }
 
-.midnight-strip div,
-.midnight-booking__details span {
-  border-radius: 999px;
+.midnight-strip div {
+  border-radius: 1.2rem;
   border: 1px solid var(--color-border);
   background: rgba(255, 255, 255, 0.04);
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 .midnight-section {
@@ -253,7 +264,8 @@ img {
 .midnight-section__intro {
   display: grid;
   gap: 0.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+  max-width: 50rem;
 }
 
 .midnight-card-grid {
@@ -304,7 +316,7 @@ img {
 
 .midnight-gallery__item {
   position: relative;
-  min-height: 20rem;
+  min-height: 18rem;
   overflow: hidden;
   border-radius: 1.5rem;
   border: 1px solid var(--color-border);
@@ -326,9 +338,24 @@ img {
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.18), rgba(25, 26, 31, 1));
 }
 
+.midnight-booking__copy {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
 .midnight-booking__details {
-  flex-wrap: wrap;
-  align-content: flex-start;
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.midnight-booking__details p {
+  margin: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-weight: 600;
 }
 
 .midnight-footer {
@@ -374,6 +401,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .midnight-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .midnight-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -389,7 +420,7 @@ img {
   }
 
   .midnight-hero {
-    min-height: 32rem;
+    min-height: 29rem;
   }
 
   .midnight-hero__content,
@@ -398,6 +429,35 @@ img {
   .midnight-booking,
   .legal-card {
     padding: 1.1rem;
+  }
+
+  .midnight-nav {
+    padding: 0.7rem 1rem;
+  }
+
+  .brand-logo {
+    height: 2.95rem;
+  }
+
+  .midnight-hero h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .midnight-section__intro h2,
+  .midnight-feature h2,
+  .midnight-booking h2,
+  .midnight-footer h2,
+  .legal-card h1 {
+    font-size: clamp(1.95rem, 9vw, 2.9rem);
+  }
+
+  .midnight-hero__actions {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .midnight-strip {
+    grid-template-columns: 1fr;
   }
 
   .midnight-gallery {

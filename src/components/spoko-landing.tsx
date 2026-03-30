@@ -4,8 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function SpokoLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -189,14 +192,17 @@ export function SpokoLanding() {
 
         <section id="kontakt" className="midnight-section" data-panel>
           <div className="midnight-booking">
-            <div>
+            <div className="midnight-booking__copy">
               <p className="midnight-eyebrow">Kontakt</p>
               <h2>{siteConfig.booking.title}</h2>
               <p>{siteConfig.booking.text}</p>
+              <a href={`tel:${siteConfig.phone}`} className="midnight-button midnight-button--accent">
+                {siteConfig.cta} <ArrowRight size={16} />
+              </a>
             </div>
             <div className="midnight-booking__details">
               {siteConfig.booking.details.map((item) => (
-                <span key={item}>{item}</span>
+                <p key={item}>{item}</p>
               ))}
             </div>
           </div>
