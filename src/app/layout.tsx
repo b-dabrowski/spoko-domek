@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.brand} | ${siteConfig.tagline}`,
     description: siteConfig.purpose,
     images: [siteConfig.hero.image],
+  },
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png", sizes: "64x64" },
