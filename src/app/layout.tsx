@@ -11,6 +11,12 @@ export const metadata: Metadata = {
     title: `${siteConfig.brand} | ${siteConfig.tagline}`,
     description: siteConfig.purpose,
     images: [siteConfig.hero.image],
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "64x64" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
