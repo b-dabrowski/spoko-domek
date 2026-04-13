@@ -22,12 +22,19 @@ export type ThemePreset = {
 
 export const siteConfig = {
   brand: "SPOKO DOMEK",
+  siteUrl: "https://spoko-domek.pl",
   purpose:
-    "Przytulny domek w Mikaszówce na kilka spokojnych dni przy lesie, wodzie i kominku.",
-  tagline: "Wieczorem kominek, rano las i cisza.",
+    "SPOKO DOMEK to domek na wynajem w Mikaszówce w gminie Płaska, blisko Kanału Augustowskiego i Puszczy Augustowskiej. Spokojny nocleg dla maksymalnie 8 osób, z kominkiem, tarasem i pełnym wyposażeniem.",
+  tagline: "Domek w Mikaszówce blisko lasu, wody i Kanału Augustowskiego.",
+  seoTitle:
+    "SPOKO DOMEK - domek w Mikaszówce | nocleg przy Puszczy Augustowskiej",
+  seoDescription:
+    "Domek na wynajem w Mikaszówce, gmina Płaska. Do 8 osób, 3 sypialnie, kominek, taras, grill i pełna kuchnia. Blisko Kanału Augustowskiego, lasu i jezior.",
   cta: "Zapytaj o wolny termin",
   location: "Mikaszówka, ul. Wczasowa 7, gmina Płaska",
+  region: "Puszcza Augustowska, Podlaskie, Polska",
   phone: "780146021",
+  phoneDisplay: "+48 780 146 021",
   email: "anetatrocki@wp.pl",
   mapUrl: "https://maps.app.goo.gl/GbxR7oXEjkW8NG5n9",
   nav: [
@@ -37,10 +44,10 @@ export const siteConfig = {
     { href: "#kontakt", label: "Kontakt" },
   ],
   hero: {
-    kicker: "SPOKO DOMEK / domek na odpoczynek",
-    title: "Miejsce na spokojny wypad o każdej porze roku.",
+    kicker: "SPOKO DOMEK / domek w Mikaszówce",
+    title: "Domek na wynajem w Mikaszówce, blisko Puszczy Augustowskiej i Kanału Augustowskiego.",
     text:
-      "W środku czeka kominek i wygodny domowy klimat. Na zewnątrz masz las, wodę i dużo ciszy. To dobry kierunek, kiedy chcesz po prostu odpocząć.",
+      "To spokojny nocleg dla maksymalnie 8 osób. W środku czeka kominek i wygodny domowy klimat, a wokół masz las, jeziora, szlaki i dużo ciszy. Dobre miejsce na rodzinny wyjazd, weekend we dwoje albo odpoczynek z przyjaciółmi.",
     image: "/photos/home-spring-003.jpg",
   },
   stats: [
@@ -68,22 +75,34 @@ export const siteConfig = {
       eyebrow: "W środku",
       title: "Jest po prostu wygodnie",
       text:
-        "Domek ma 3 sypialnie, dodatkowe spanie na parterze, pełną kuchnię oraz łazienkę i toaletę na górze. Nic nie trzeba kombinować.",
+        "Domek w Mikaszówce ma 3 sypialnie, dodatkowe spanie na parterze, pełną kuchnię oraz łazienkę i osobną toaletę na górze. Jest wygodnie zarówno na dłuższy pobyt, jak i na krótki wypad.",
       image: "/photos/livingroom-003.jpg",
     },
     {
       eyebrow: "Wokół",
       title: "Okolica robi połowę roboty",
       text:
-        "Las, jeziora, szlaki i Kanał Augustowski są blisko. To okolica, która sama zachęca do spaceru, roweru albo dnia bez pośpiechu.",
+        "Las, jeziora, szlaki i Kanał Augustowski są blisko. Mikaszówka i gmina Płaska to dobra baza na spacer, rower, kajak i zwykły odpoczynek w sercu Puszczy Augustowskiej.",
       image: "/photos/home-spring-001.jpg",
     },
   ],
   gallery: [
-    { src: "/photos/bedroom-2-001.jpg", alt: "Sypialnia" },
-    { src: "/photos/kitchen-003.jpg", alt: "Kuchnia" },
-    { src: "/photos/toilet-001.jpg", alt: "Toaleta" },
-    { src: "/photos/terrace-001.jpg", alt: "Taras" },
+    {
+      src: "/photos/bedroom-2-001.jpg",
+      alt: "Sypialnia w domku SPOKO DOMEK w Mikaszówce",
+    },
+    {
+      src: "/photos/kitchen-003.jpg",
+      alt: "Kuchnia w domku na wynajem SPOKO DOMEK",
+    },
+    {
+      src: "/photos/toilet-001.jpg",
+      alt: "Łazienka i toaleta w domku SPOKO DOMEK",
+    },
+    {
+      src: "/photos/terrace-001.jpg",
+      alt: "Taras przy domku SPOKO DOMEK w Mikaszówce",
+    },
   ],
   booking: {
     title: "Rezerwacja jest prosta",
@@ -100,6 +119,16 @@ export const siteConfig = {
     legal: [
       { href: "/warunki-pobytu", label: "Warunki pobytu" },
       { href: "/polityka-prywatnosci", label: "Polityka prywatności" },
+    ],
+  },
+  seo: {
+    keywords: [
+      "domek Mikaszówka",
+      "nocleg Mikaszówka",
+      "domek Puszcza Augustowska",
+      "nocleg Kanał Augustowski",
+      "domek gmina Płaska",
+      "domek na wynajem Podlaskie",
     ],
   },
   theme: {

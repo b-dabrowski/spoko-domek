@@ -4,12 +4,34 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.brand} | ${siteConfig.tagline}`,
-  description: siteConfig.purpose,
-  metadataBase: new URL("https://spoko-domek.vercel.app"),
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: {
+    default: siteConfig.seoTitle,
+    template: `%s | ${siteConfig.brand}`,
+  },
+  description: siteConfig.seoDescription,
+  keywords: siteConfig.seo.keywords,
+  alternates: {
+    canonical: siteConfig.siteUrl,
+  },
   openGraph: {
-    title: `${siteConfig.brand} | ${siteConfig.tagline}`,
-    description: siteConfig.purpose,
+    type: "website",
+    locale: "pl_PL",
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.brand,
+    title: siteConfig.seoTitle,
+    description: siteConfig.seoDescription,
+    images: [
+      {
+        url: siteConfig.hero.image,
+        alt: `${siteConfig.brand} w Mikaszówce`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seoTitle,
+    description: siteConfig.seoDescription,
     images: [siteConfig.hero.image],
   },
   icons: {
@@ -19,6 +41,7 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
+  category: "travel",
 };
 
 export default function RootLayout({

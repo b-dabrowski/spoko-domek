@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: "Polityka prywatności",
+  description:
+    "Informacja o przetwarzaniu danych kontaktowych podczas rezerwacji pobytu w SPOKO DOMEK w Mikaszówce.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/polityka-prywatnosci`,
+  },
+};
 
 export default function PrivacyPage() {
   return (

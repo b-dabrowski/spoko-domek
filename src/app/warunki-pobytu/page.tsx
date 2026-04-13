@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: "Warunki pobytu",
+  description:
+    "Warunki rezerwacji i pobytu w SPOKO DOMEK w Mikaszówce: minimalna długość pobytu, zaliczka i zasady kontaktu.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/warunki-pobytu`,
+  },
+};
 
 export default function TermsPage() {
   return (

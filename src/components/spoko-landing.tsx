@@ -141,7 +141,10 @@ export function SpokoLanding() {
         <section id="weekend" className="midnight-section" data-panel>
           <div className="midnight-section__intro">
             <p className="midnight-eyebrow">Na co ten domek jest dobry</p>
-            <h2>Na kilka prostych dni, które nie muszą być niczym więcej niż odpoczynkiem.</h2>
+            <h2>
+              Nocleg w Mikaszówce dla osób, które chcą odpocząć blisko lasu, wody i
+              spokojnej okolicy.
+            </h2>
           </div>
 
           <div className="midnight-card-grid">
@@ -180,7 +183,10 @@ export function SpokoLanding() {
         <section id="zdjecia" className="midnight-section" data-panel>
           <div className="midnight-section__intro">
             <p className="midnight-eyebrow">Kilka zdjęć</p>
-            <h2>Tu można odpocząć zarówno latem, jak i w chłodniejsze dni.</h2>
+            <h2>
+              Zobacz, jak wygląda domek na wynajem w Mikaszówce i jego spokojne
+              otoczenie.
+            </h2>
           </div>
 
           <div className="midnight-gallery">
