@@ -41,13 +41,6 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
   category: "travel",
-  other: {
-    "geo.position": "53.9500;23.2667",
-    "geo.placename": "Mikaszówka",
-    "geo.region": "PL-PD",
-    "ICBM": "53.9500, 23.2667",
-    "theme-color": "#0D0D12",
-  },
 };
 
 export default function RootLayout({

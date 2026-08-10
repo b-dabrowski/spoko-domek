@@ -129,12 +129,6 @@ export const siteConfig = {
       "nocleg Kanał Augustowski",
       "domek gmina Płaska",
       "domek na wynajem Podlaskie",
-      "agroturystyka Podlaskie",
-      "noclegi Augustów",
-      "domek letniskowy Podlaskie",
-      "wypoczynek Puszcza Augustowska",
-      "kajaki Kanał Augustowski",
-      "szlaki turystyczne Podlaskie",
     ],
   },
   theme: {
