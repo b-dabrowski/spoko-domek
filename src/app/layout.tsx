@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
+import { canonical } from "@/lib/site-links";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.seoDescription,
   keywords: siteConfig.seo.keywords,
-  alternates: {
-    canonical: siteConfig.siteUrl,
-  },
+  ...canonical(),
   openGraph: {
     type: "website",
     locale: "pl_PL",

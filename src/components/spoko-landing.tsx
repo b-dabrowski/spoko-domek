@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { CoverImage, PhoneCta, SectionIntro } from "@/components/ui";
 import { siteConfig } from "@/lib/site-config";
+import { mailtoHref, telHref } from "@/lib/site-links";
 import { reportError } from "@/lib/report-error";
 
 function revealWithoutAnimation(root: HTMLElement | null) {
@@ -95,9 +97,7 @@ export function SpokoLanding() {
           ))}
         </nav>
 
-        <a href={`tel:${siteConfig.phone}`} className="midnight-button midnight-button--ghost">
-          {siteConfig.cta}
-        </a>
+        <PhoneCta variant="ghost" />
 
         <button
           type="button"
@@ -116,24 +116,19 @@ export function SpokoLanding() {
               {item.label}
             </a>
           ))}
-          <a href={`tel:${siteConfig.phone}`}>{siteConfig.cta}</a>
+          <a href={telHref}>{siteConfig.cta}</a>
         </div>
       ) : null}
 
       <main className="midnight-main">
         <section className="midnight-hero">
-          <div
-            className="midnight-hero__image"
-            data-show
-            style={{ position: "absolute", inset: 0 }}
-          >
-            <Image
+          <div className="midnight-hero__image" data-show>
+            <CoverImage
               src={siteConfig.hero.image}
               alt="Widok domku SPOKO DOMEK"
-              fill
-              priority
-              loading="eager"
               sizes="100vw"
+              priority
+              eager
             />
           </div>
 
@@ -146,9 +141,7 @@ export function SpokoLanding() {
               {siteConfig.hero.text}
             </p>
             <div className="midnight-hero__actions" data-show>
-              <a href={`tel:${siteConfig.phone}`} className="midnight-button midnight-button--accent">
-                {siteConfig.cta} <ArrowRight size={16} />
-              </a>
+              <PhoneCta variant="accent" withIcon />
               <a href={siteConfig.mapUrl} target="_blank" rel="noreferrer">
                 Pokaż mapę
               </a>
@@ -163,13 +156,10 @@ export function SpokoLanding() {
         </section>
 
         <section id="weekend" className="midnight-section" data-panel>
-          <div className="midnight-section__intro">
-            <p className="midnight-eyebrow">Na co ten domek jest dobry</p>
-            <h2>
-              Nocleg w Mikaszówce dla osób, które chcą odpocząć blisko lasu, wody i
-              spokojnej okolicy.
-            </h2>
-          </div>
+          <SectionIntro
+            eyebrow="Na co ten domek jest dobry"
+            title="Nocleg w Mikaszówce dla osób, które chcą odpocząć blisko lasu, wody i spokojnej okolicy."
+          />
 
           <div className="midnight-card-grid">
             {siteConfig.cards.map((card) => (
@@ -189,14 +179,10 @@ export function SpokoLanding() {
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
               </div>
-              <div
-                className="midnight-feature__image"
-                style={{ position: "relative", minHeight: "22rem" }}
-              >
-                <Image
+              <div className="midnight-feature__image">
+                <CoverImage
                   src={section.image}
                   alt={section.title}
-                  fill
                   sizes="(max-width: 900px) 100vw, 44vw"
                 />
               </div>
@@ -205,27 +191,19 @@ export function SpokoLanding() {
         </section>
 
         <section id="zdjecia" className="midnight-section" data-panel>
-          <div className="midnight-section__intro">
-            <p className="midnight-eyebrow">Kilka zdjęć</p>
-            <h2>
-              Zobacz, jak wygląda domek na wynajem w Mikaszówce i jego spokojne
-              otoczenie.
-            </h2>
-          </div>
+          <SectionIntro
+            eyebrow="Kilka zdjęć"
+            title="Zobacz, jak wygląda domek na wynajem w Mikaszówce i jego spokojne otoczenie."
+          />
 
           <div className="midnight-gallery">
             {siteConfig.gallery.map((photo, index) => (
-              <figure
-                key={photo.src}
-                className="midnight-gallery__item"
-                style={{ position: "relative", minHeight: "18rem" }}
-              >
-                <Image
+              <figure key={photo.src} className="midnight-gallery__item">
+                <CoverImage
                   src={photo.src}
                   alt={photo.alt}
-                  fill
-                  loading={index === 0 ? "eager" : undefined}
                   sizes="(max-width: 900px) 100vw, 25vw"
+                  eager={index === 0}
                 />
                 <figcaption>{photo.alt}</figcaption>
               </figure>
@@ -239,9 +217,7 @@ export function SpokoLanding() {
               <p className="midnight-eyebrow">Kontakt</p>
               <h2>{siteConfig.booking.title}</h2>
               <p>{siteConfig.booking.text}</p>
-              <a href={`tel:${siteConfig.phone}`} className="midnight-button midnight-button--accent">
-                {siteConfig.cta} <ArrowRight size={16} />
-              </a>
+              <PhoneCta variant="accent" withIcon />
             </div>
             <div className="midnight-booking__details">
               {siteConfig.booking.details.map((item) => (
@@ -259,11 +235,11 @@ export function SpokoLanding() {
         </div>
 
         <div className="midnight-footer__contact">
-          <a href={`tel:${siteConfig.phone}`}>
+          <a href={telHref}>
             <Phone size={16} />
             {siteConfig.phone}
           </a>
-          <a href={`mailto:${siteConfig.email}`}>
+          <a href={mailtoHref}>
             <Mail size={16} />
             {siteConfig.email}
           </a>
