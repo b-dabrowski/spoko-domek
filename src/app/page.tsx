@@ -32,6 +32,7 @@ export default function Home() {
       addressLocality: "Mikaszówka",
       addressRegion: "podlaskie",
       addressCountry: "PL",
+      postalCode: "16-302",
     },
     areaServed: [
       "Mikaszówka",
@@ -55,12 +56,26 @@ export default function Home() {
     sameAs: [siteConfig.mapUrl],
   };
 
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.brand,
+    url: siteConfig.siteUrl,
+    description: siteConfig.seoDescription,
+    inLanguage: "pl",
+  };
+
   return (
     <>
       <Script
         id="lodging-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingSchema) }}
+      />
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
       />
       <SpokoLanding />
     </>
