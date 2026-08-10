@@ -60,7 +60,9 @@ export default function Home() {
       <Script
         id="lodging-business-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(lodgingSchema).replace(/</g, "\\u003c"),
+        }}
       />
       <SpokoLanding />
     </>
