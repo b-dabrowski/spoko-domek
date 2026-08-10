@@ -7,46 +7,70 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { reportError } from "@/lib/report-error";
 
-gsap.registerPlugin(ScrollTrigger);
+function revealWithoutAnimation(root: HTMLElement | null) {
+  root?.querySelectorAll<HTMLElement>("[data-show], [data-panel]").forEach((element) => {
+    element.style.opacity = "1";
+    element.style.transform = "none";
+  });
+}
 
 export function SpokoLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        "[data-show]",
-        { y: 28, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.08,
-          duration: 0.85,
-          ease: "power3.out",
-        },
-      );
+    const root = rootRef.current;
+    let ctx: gsap.Context | null = null;
 
-      gsap.utils.toArray<HTMLElement>("[data-panel]").forEach((panel) => {
+    try {
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
         gsap.fromTo(
-          panel,
-          { y: 36, opacity: 0 },
+          "[data-show]",
+          { y: 28, opacity: 0 },
           {
             y: 0,
             opacity: 1,
+            stagger: 0.08,
             duration: 0.85,
             ease: "power3.out",
-            scrollTrigger: {
-              trigger: panel,
-              start: "top 82%",
-            },
           },
         );
-      });
-    }, rootRef);
 
-    return () => ctx.revert();
+        gsap.utils.toArray<HTMLElement>("[data-panel]").forEach((panel) => {
+          gsap.fromTo(
+            panel,
+            { y: 36, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.85,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: panel,
+                start: "top 82%",
+              },
+            },
+          );
+        });
+      }, rootRef);
+    } catch (error) {
+      reportError("gsap intro animations", error);
+      ctx?.revert();
+      ctx = null;
+      revealWithoutAnimation(root);
+    }
+
+    return () => {
+      try {
+        ctx?.revert();
+      } catch (error) {
+        reportError("gsap cleanup", error);
+      }
+    };
   }, []);
 
   return (
