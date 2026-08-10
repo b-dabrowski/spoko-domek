@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site-config";
+import { absoluteUrl } from "@/lib/site-links";
 
 const pages = [
   {
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return pages.map((page) => ({
-    url: `${siteConfig.siteUrl}${page.path}`,
+    url: absoluteUrl(page.path),
     lastModified,
     changeFrequency: page.changeFrequency,
     priority: page.priority,

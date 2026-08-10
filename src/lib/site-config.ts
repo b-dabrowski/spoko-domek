@@ -20,6 +20,14 @@ export type ThemePreset = {
   };
 };
 
+const contact = {
+  phone: "780146021",
+  phoneDisplay: "+48 780 146 021",
+  email: "anetatrocki@wp.pl",
+};
+
+const minStayNights = 4;
+
 export const siteConfig = {
   brand: "SPOKO DOMEK",
   siteUrl: "https://spoko-domek.pl",
@@ -33,9 +41,8 @@ export const siteConfig = {
   cta: "Zapytaj o wolny termin",
   location: "Mikaszówka, ul. Wczasowa 7, gmina Płaska",
   region: "Puszcza Augustowska, Podlaskie, Polska",
-  phone: "780146021",
-  phoneDisplay: "+48 780 146 021",
-  email: "anetatrocki@wp.pl",
+  ...contact,
+  minStayNights,
   mapUrl: "https://maps.app.goo.gl/GbxR7oXEjkW8NG5n9",
   nav: [
     { href: "#dom", label: "Dom" },
@@ -54,7 +61,7 @@ export const siteConfig = {
     "do 8 osób",
     "3 sypialnie",
     "pełna kuchnia",
-    "minimum 4 doby",
+    `minimum ${minStayNights} doby`,
   ],
   cards: [
     {
@@ -109,9 +116,9 @@ export const siteConfig = {
     text:
       "Dzwonisz, pytasz o termin, wpłacasz zaliczkę i gotowe. Reszta płatności odbywa się na miejscu. Można też napisać maila.",
     details: [
-      "telefon: 780 146 021",
-      "e-mail: anetatrocki@wp.pl",
-      "minimum pobytu: 4 doby",
+      `telefon: ${contact.phoneDisplay}`,
+      `e-mail: ${contact.email}`,
+      `minimum pobytu: ${minStayNights} doby`,
       "płatność: zaliczka + dopłata na miejscu",
     ],
   },

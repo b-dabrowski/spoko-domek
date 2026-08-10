@@ -2,13 +2,12 @@ import Script from "next/script";
 import type { Metadata } from "next";
 import { SpokoLanding } from "@/components/spoko-landing";
 import { siteConfig } from "@/lib/site-config";
+import { absoluteUrl, canonical } from "@/lib/site-links";
 
 export const metadata: Metadata = {
   title: siteConfig.seoTitle,
   description: siteConfig.seoDescription,
-  alternates: {
-    canonical: siteConfig.siteUrl,
-  },
+  ...canonical(),
 };
 
 export default function Home() {
@@ -17,11 +16,11 @@ export default function Home() {
     "@type": "LodgingBusiness",
     name: siteConfig.brand,
     description: siteConfig.seoDescription,
-    url: siteConfig.siteUrl,
+    url: absoluteUrl(),
     image: [
-      `${siteConfig.siteUrl}${siteConfig.hero.image}`,
-      `${siteConfig.siteUrl}/photos/home-spring-001.jpg`,
-      `${siteConfig.siteUrl}/photos/livingroom-003.jpg`,
+      absoluteUrl(siteConfig.hero.image),
+      absoluteUrl("/photos/home-spring-001.jpg"),
+      absoluteUrl("/photos/livingroom-003.jpg"),
     ],
     telephone: `+48${siteConfig.phone}`,
     email: siteConfig.email,
