@@ -28,9 +28,22 @@ const contact = {
 
 const minStayNights = 4;
 
+function absoluteUrl(field: string, value: string): string {
+  try {
+    new URL(value);
+  } catch (cause) {
+    throw new Error(
+      `site-config.${field} must be an absolute URL, received "${value}"`,
+      { cause },
+    );
+  }
+
+  return value;
+}
+
 export const siteConfig = {
   brand: "SPOKO DOMEK",
-  siteUrl: "https://spoko-domek.pl",
+  siteUrl: absoluteUrl("siteUrl", "https://spoko-domek.pl"),
   purpose:
     "SPOKO DOMEK to domek na wynajem w Mikaszówce w gminie Płaska, blisko Kanału Augustowskiego i Puszczy Augustowskiej. Spokojny nocleg dla maksymalnie 8 osób, z kominkiem, tarasem i pełnym wyposażeniem.",
   tagline: "Domek w Mikaszówce blisko lasu, wody i Kanału Augustowskiego.",
